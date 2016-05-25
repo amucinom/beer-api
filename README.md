@@ -9,6 +9,6 @@ to create an AngularJS app with it.
 - MongoDB (mongoose)
 - AngularJS (WIP)
 - [Postman](https://www.getpostman.com/)
-  - to test HTTP requests
+    - to test HTTP requests
 
 Stay tuned for more!
