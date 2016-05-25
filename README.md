@@ -12,3 +12,6 @@ to create an AngularJS app with it.
     - to test HTTP requests
 
 Stay tuned for more!
+
+## License
+MIT &copy; [Aldo Mucino-Martinez](https://amucinom.github.io/)
