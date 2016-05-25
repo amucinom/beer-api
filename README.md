@@ -4,10 +4,10 @@ Node.js and Express and how to create RESTful API's with them. It will later be 
 to create an AngularJS app with it.
 
 ## Tools used
-- Node.js
-- Express
-- MongoDB (mongoose)
-- AngularJS (WIP)
+- [Node.js](https://nodejs.org/en/)
+- [Express](http://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/) (mongoose)
+- [AngularJS](https://angularjs.org/) (WIP)
 - [Postman](https://www.getpostman.com/)
     - to test HTTP requests
 
