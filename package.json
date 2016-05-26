@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "Beer App",
   "main": "server.js",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/amucinom/beer-api"
+  },
   "scripts": {
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,6 +19,7 @@
   "devDependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "mongoose": "^4.4.19"
+    "mongoose": "^4.4.19",
+    "morgan": "^1.7.0"
   }
 }

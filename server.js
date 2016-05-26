@@ -1,6 +1,7 @@
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
+	morgan = require('morgan');
 	mongoose = require('mongoose'),
 	db = mongoose.connection,
 	router = express.Router(),
@@ -17,6 +18,7 @@ db.once('open', function () {
 // configure app to use bodyParser to get
 // data from POST
 app.use(bodyParser.urlencoded( { extended: true } ));
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 
@@ -106,7 +108,7 @@ router.route('/beers/:beer_id')
 // =======================================================
 app
 	.use(express.static('./public'))
-	.get('/', function (req, res) {
+	.get('', function (req, res) {
 		res.sendFile( __dirname + '/public/main.html' );
 	})
 	.listen(port);
