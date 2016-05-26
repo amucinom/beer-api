@@ -41,22 +41,23 @@ router
 
 
 // Make Routes
-// =======================================================
+// ======================================================
 
 router.route('/beers')
 	// create new beer. localhost:8000/api/beers
 	.post(function (req, res) {
-		var beer = new Beer();
-		beer.name = req.body.name;
-		beer.location = req.body.location;
-		beer.abv = req.body.abv;
 
-		beer.save(function(err) {
-			if (err) {
-				res.send(err);
+		Beer.create({
+            name : req.body.name,
+            location: req.body.location,
+			abv: req.body.abv
+        }, function(err, beer) {
+            if (err) {
+                res.send(err);
 			}
 			res.json( { message: 'Beer created!' } );
-		});
+        });
+
 	})
 	// get all beers
 	.get(function (req, res) {

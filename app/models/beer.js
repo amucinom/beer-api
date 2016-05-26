@@ -1,9 +1,9 @@
-var mongoose     = require('mongoose');
-var Schema       = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var BeerSchema   = new Schema({
+var BeerSchema = new Schema({
     name: String,
-    origin: String,
+    location: String,
     abv: Number
 });
 
