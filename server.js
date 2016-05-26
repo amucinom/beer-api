@@ -1,7 +1,7 @@
 var express = require('express'),
 	app = express(),
 	bodyParser = require('body-parser'),
-	morgan = require('morgan');
+	morgan = require('morgan'),
 	mongoose = require('mongoose'),
 	db = mongoose.connection,
 	router = express.Router(),
@@ -48,7 +48,9 @@ router.route('/beers')
 	.post(function (req, res) {
 		var beer = new Beer();
 		beer.name = req.body.name;
-		console.log('name of beer: ' + beer.name);
+		beer.location = req.body.location;
+		beer.abv = req.body.abv;
+
 		beer.save(function(err) {
 			if (err) {
 				res.send(err);
@@ -105,7 +107,7 @@ router.route('/beers/:beer_id')
 	});
 
 // START SERVER
-// =======================================================
+// ======================================================
 app
 	.use(express.static('./public'))
 	.get('', function (req, res) {
