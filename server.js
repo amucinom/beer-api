@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 
 // REGISTER ROUTES
-// =======================================================
+// ======================================================
 app.use('/api', router);
 
 router.use(function (req, res, next) {
@@ -54,7 +54,7 @@ router.route('/beers')
 			res.json( { message: 'Beer created!' } );
 		});
 	})
-	// get all bears
+	// get all beers
 	.get(function (req, res) {
 		Beer.find(function(err, bears) {
 			if (err) {
@@ -106,7 +106,7 @@ router.route('/beers/:beer_id')
 // =======================================================
 app
 	.use(express.static('./public'))
-	.get('*', function (req, res) {
+	.get('/', function (req, res) {
 		res.sendFile( __dirname + '/public/main.html' );
 	})
 	.listen(port);
