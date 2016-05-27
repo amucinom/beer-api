@@ -2,7 +2,7 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
 	connection = mongoose.connection,
-	db = require('./config/db')
+	db = require('./config/db'),
 	router = express.Router();
 var Beer = require('./app/models/beer');
 
