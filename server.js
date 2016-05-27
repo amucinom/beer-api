@@ -6,11 +6,14 @@ var express = require('express'),
 
 app.use(morgan('dev'));
 
-app.use('/api', router);
+// app.use('/api', router);
 
 app
-	.use(express.static('./public'))
+	.use(express.static('./public/'))
+	.use('/api', router)
 	.get('', function (req, res) {
-		res.sendFile( __dirname + '/public/main.html' );
+		res.sendFile('public/main.html', {"root": "."} );
 	})
-	.listen(port);
+	.listen(port, function() {
+		console.log('Brewing on locahost:' + port);
+	});

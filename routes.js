@@ -13,23 +13,27 @@ connection.once('open', function () {
 	console.log('Mongoose connected!');
 });
 
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded( { extended: true } ));
+// router.;
+// router
 
-router.use(function (req, res, next) {
-	console.log('Stuff is happening...');
-	next();
-});
-
-router
-	.get('/', function (req, res) {
-		res.json(
-			{ message: 'welcome to the beer api' }
-		);
-	});
+// router.use(function (req, res, next) {
+// 	console.log('Stuff is happening...');
+// 	next();
+// });
 
 router
+	.use(bodyParser.json())
+	.use(bodyParser.urlencoded( { extended: true } ))
 	.route('/beers')
+	// get all beers
+	.get(function (req, res) {
+		Beer.find(function(err, beers) {
+			if (err) {
+				res.send(err);
+			}
+			res.json(beers);
+		});
+	})
 	.post(function (req, res) {
 
 		Beer.create({
@@ -43,15 +47,6 @@ router
 			res.json( { message: 'Beer created!' } );
         });
 
-	})
-	// get all beers
-	.get(function (req, res) {
-		Beer.find(function(err, bears) {
-			if (err) {
-				res.send(err);
-			}
-			res.json(bears);
-		});
 	});
 
 router
