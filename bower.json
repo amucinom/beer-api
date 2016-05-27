@@ -1,0 +1,27 @@
+{
+  "name": "beer",
+  "description": "Beer App",
+  "main": "server.js",
+  "authors": [
+    "Aldo Mucino"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "beer"
+  ],
+  "homepage": "https://github.com/amucinom/beer-api",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.5"
+  }
+}
