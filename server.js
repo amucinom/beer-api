@@ -9,10 +9,10 @@ app.use(morgan('dev'));
 // app.use('/api', router);
 
 app
-	.use(express.static('./public/'))
+	.use(express.static('./client'))
 	.use('/api', router)
-	.get('', function (req, res) {
-		res.sendFile('public/main.html', {"root": "."} );
+	.get('*', function (req, res) {
+		res.sendFile('client/main.html', {"root": "."} );
 	})
 	.listen(port, function() {
 		console.log('Brewing on locahost:' + port);

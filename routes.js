@@ -4,7 +4,7 @@ var express = require('express'),
 	connection = mongoose.connection,
 	db = require('./config/db'),
 	router = express.Router();
-var Beer = require('./app/models/beer');
+var Beer = require('./client/app/models/beer');
 
 // Use mongoose for mongodb integration
 mongoose.connect(db.url);
@@ -12,14 +12,6 @@ connection.on('error', console.error.bind(console, 'connection error:'));
 connection.once('open', function () {
 	console.log('Mongoose connected!');
 });
-
-// router.;
-// router
-
-// router.use(function (req, res, next) {
-// 	console.log('Stuff is happening...');
-// 	next();
-// });
 
 router
 	.use(bodyParser.json())

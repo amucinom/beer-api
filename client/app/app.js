@@ -5,6 +5,9 @@ angular.module('beerApp', ['ngRoute'])
 				controller: 'beerCtrl',
 				templateUrl: 'main.html'
 			})
+			.when('/add', {
+
+			})
 			.otherwise({
 				redirectTo: '/'
 			});

@@ -5,7 +5,6 @@ angular.module('beerApp')
 		$http.get('api/beers')
 			.success(function (data) {
 				$scope.beers = data;
-				console.log(data);
 			})
 			.error(function (data) {
 				console.log('Error: ', data);
