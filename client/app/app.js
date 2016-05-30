@@ -1,4 +1,4 @@
-angular.module('beerApp', ['ngRoute'])
+angular.module('beerApp', ['ngRoute', 'ngResource'])
 	.config(function($routeProvider, $locationProvider) {
 		$routeProvider
 			.when('/', {
