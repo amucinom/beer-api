@@ -1,5 +1,5 @@
 angular.module('beerApp')
-	.controller('beerCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+	.controller('listCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
 		$scope.beerData = {};
 
 		$http.get('api/beers')

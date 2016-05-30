@@ -1,13 +1,13 @@
 angular.module('beerApp', ['ngRoute'])
 	.config(function($routeProvider, $locationProvider) {
 		$routeProvider
-			.when('/beers', {
-				controller: 'beerCtrl',
-				templateUrl: 'main.html'
+			.when('/', {
+				controller: 'listCtrl',
+				templateUrl: 'app/list/list.html'
 			})
 			.when('/beers/new', {
 				controller: 'addCtrl',
-				templateUrl: 'add.html'
+				templateUrl: 'app/add/add.html'
 			})
 			.otherwise({
 				redirectTo: '/'

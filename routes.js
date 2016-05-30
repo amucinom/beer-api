@@ -4,7 +4,7 @@ var express = require('express'),
 	connection = mongoose.connection,
 	db = require('./config/db'),
 	router = express.Router();
-var Beer = require('./client/app/models/beer');
+var Beer = require('./config/beer');
 
 // Use mongoose for mongodb integration
 mongoose.connect(db.url);
