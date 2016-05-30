@@ -11,7 +11,7 @@ app.use(morgan('dev'));
 app
 	.use(express.static('./client'))
 	.use('/api', router)
-	.get('', function (req, res) {
+	.get('*', function (req, res) {
 		res.sendFile('client/index.html', {"root": "."} );
 	})
 	.listen(port, function() {
