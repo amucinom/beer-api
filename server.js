@@ -12,6 +12,9 @@ app
 	.use(express.static('./client'))
 	.use('/api', router)
 	.get('*', function (req, res) {
+		if (!req) {
+			res.redirect('/beers');
+		}
 		res.sendFile('client/main.html', {"root": "."} );
 	})
 	.listen(port, function() {

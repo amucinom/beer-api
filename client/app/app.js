@@ -5,8 +5,9 @@ angular.module('beerApp', ['ngRoute'])
 				controller: 'beerCtrl',
 				templateUrl: 'main.html'
 			})
-			.when('/add', {
-
+			.when('/beers/new', {
+				controller: 'addCtrl',
+				templateUrl: 'add.html'
 			})
 			.otherwise({
 				redirectTo: '/'
