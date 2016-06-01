@@ -9,6 +9,10 @@ angular.module('beerApp', ['ngRoute', 'ngResource'])
 				controller: 'addCtrl',
 				templateUrl: 'app/add/add.html'
 			})
+			.when('/beers/:id', {
+				controller: 'singleCtrl',
+				templateUrl: 'app/single/single.html'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
