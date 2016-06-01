@@ -23,10 +23,12 @@ angular.module('beerApp')
 			};
 			// Update beer entry
 			$scope.updateBeer = function() {
-
-					$scope.beer.name = $scope.formData.name;
-					$scope.beer.location = $scope.formData.location;
-					$scope.beer.abv = $scope.formData.abv;
+					// $scope.beer.name = $scope.newBeer.name.$modelValue;
+					// $scope.beer.location = $scope.newBeer.location.$modelValue;
+					// $scope.beer.abv = $scope.newBeer.abv.$modelValue;
+					// $scope.beer.name = $scope.formData.name;
+					// $scope.beer.location = $scope.formData.location;
+					// $scope.beer.abv = $scope.formData.abv;
 
 					$scope.beer.$update();
 					$scope.isEditable = 1;

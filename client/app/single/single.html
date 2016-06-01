@@ -6,18 +6,18 @@
 <div class="container" ng-show="beginEdit(2)">
 	<h2>Update Beer Entry</h2>
 
-	<form name='updateEntry' novalidate class='form-horizontal'>
+	<form name='newBeer' novalidate class='form-horizontal'>
 	    <div class="form-group">
 	        <label for="name">Name</label>
-	        <input type="text" class="form-control" name="name" placeholder="{{ beer.name }}" ng-model="formData.name">
+	        <input type="text" placeholder="{{beer.name}}" class="form-control" name="name" ng-model="beer.name">
 	    </div>
 	    <div class="form-group">
 	        <label for="location">Origin</label>
-	        <input type="text" class="form-control" name="location" placeholder="{{ beer.location }}" ng-model="formData.location">
+	        <input type="text" placeholder="{{ beer.location }}" class="form-control" name="location" ng-model="beer.location">
 	    </div>
 	    <div class="form-group">
 	        <label for="abv">ABV</label>
-	        <input type="text" class="form-control" name="abv" placeholder="{{ beer.abv }}" ng-model="formData.abv">
+	        <input type="number" placeholder="{{ beer.abv }}" class="form-control" name="abv" ng-model="beer.abv">
 	    </div>
 	    <div class='form-group'>
 	        <button class='btn btn-success' ng-click="updateBeer()">Update Entry</button>
