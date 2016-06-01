@@ -58,6 +58,8 @@ router
 				res.send(err);
 			}
 			beer.name = req.body.name;
+			beer.location = req.body.location;
+			beer.abv = req.body.abv;
 
 			// save beer
 			beer.save(function(err) {

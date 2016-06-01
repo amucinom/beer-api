@@ -2,3 +2,26 @@
 <p class="lead">Origin: {{ beer.location }}<br />ABV: {{ beer.abv }}%</p>
 <a href="/" class="btn btn-info">Back to list</a>
 <button ng-click="deleteBeer()" class="btn btn-danger">Delete</button>
+<button  ng-click="selectEditable(2)" class="btn btn-danger">Edit</button>
+<div class="container" ng-show="beginEdit(2)">
+	<h2>Update Beer Entry</h2>
+
+	<form name='updateEntry' novalidate class='form-horizontal'>
+	    <div class="form-group">
+	        <label for="name">Name</label>
+	        <input type="text" class="form-control" name="name" placeholder="{{ beer.name }}" ng-model="formData.name">
+	    </div>
+	    <div class="form-group">
+	        <label for="location">Origin</label>
+	        <input type="text" class="form-control" name="location" placeholder="{{ beer.location }}" ng-model="formData.location">
+	    </div>
+	    <div class="form-group">
+	        <label for="abv">ABV</label>
+	        <input type="text" class="form-control" name="abv" placeholder="{{ beer.abv }}" ng-model="formData.abv">
+	    </div>
+	    <div class='form-group'>
+	        <button class='btn btn-success' ng-click="updateBeer()">Update Entry</button>
+	    </div>
+	</form>
+
+</div>
