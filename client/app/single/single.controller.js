@@ -1,5 +1,5 @@
 angular.module('beerApp')
-	.controller('beerCtrl', ['$scope','$rootScope', 'Beer', '$routeParams', '$location',
+	.controller('singleBeerCtrl', ['$scope','$rootScope', 'Beer', '$routeParams', '$location',
 		function($scope, $rootScope, Beer, $routeParams, $location) {
 			$rootScope.PAGE = "single";
 

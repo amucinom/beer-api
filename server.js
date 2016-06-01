@@ -6,8 +6,6 @@ var express = require('express'),
 
 app.use(morgan('dev'));
 
-// app.use('/api', router);
-
 app
 	.use(express.static('./client'))
 	.use('/api', router)
