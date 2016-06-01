@@ -10,7 +10,7 @@ angular.module('beerApp', ['ngRoute', 'ngResource'])
 				templateUrl: 'app/add/add.html'
 			})
 			.when('/beers/:id', {
-				controller: 'singleCtrl',
+				controller: 'beerCtrl',
 				templateUrl: 'app/single/single.html'
 			})
 			.otherwise({

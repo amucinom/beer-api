@@ -1,7 +1,7 @@
 angular.module('beerApp')
 	.factory('Beer', ['$resource', '$http', function ($resource, $http) {
 
-		return $resource('/api/beers/:id', { id: '@id' }, {
+		return $resource('/api/beers/:id', { id: '@_id' }, {
 			update: { method: 'PUT' }
 		});
 

@@ -1,11 +1,11 @@
 angular.module('beerApp')
-	.controller('singleCtrl', ['$scope', '$rootScope', '$location', 'Beer', '$routeParams'],
-	function ($scope, $rootScope, $location, Beer, $routeParams) {
-		$rootScope.PAGE = "single";
-		$scope.beer = Beer.get( { id: parseInt($routeParams.id, 10) });
+	.controller('beerCtrl', ['$scope','$rootScope', 'Beer', '$routeParams', '$location',
+		function($scope, $rootScope, Beer, $routeParams, $location) {
+			$rootScope.PAGE = "single";
 
-		$scope.deleteBeer = function() {
-			$scope.beer.$delete();
-			$location.url('/');
-		};
-	});
+			$scope.beer = Beer.get({ id: $routeParams.id });
+			$scope.deleteBeer = function() {
+				$scope.beer.$delete();
+				$location.url('/');
+			};
+	}]);
