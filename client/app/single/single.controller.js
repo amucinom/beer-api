@@ -14,7 +14,7 @@ angular.module('beerApp')
 				return $scope.isEditable === checkEditable;
 			};
 
-			console.log($routeParams.id);
+			console.log('beerid', $routeParams.id);
 			$scope.beer = Beer.get({ id: $routeParams.id });
 
 			// Delete beer
@@ -36,11 +36,6 @@ angular.module('beerApp')
 					$location.url('/');
 			};
 
-			// $scope.getBeerInfo = function() {
-			// 	$http.get('http://api.brewerydb.com/v2/beers?name=Negra%20Modelo&key=ff38a546dd3a7921822fcfeefa92fa37&format=json')
-			// 		.success(function(data) {
-			// 			console.log(data);
-			// 		});
-			// }();
+			
 
 	}]);

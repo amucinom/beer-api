@@ -19,6 +19,7 @@
   "devDependencies": {
     "angular-route": "^1.5.5",
     "body-parser": "^1.15.1",
+    "brewerydb-node": "0.0.1",
     "browser-sync": "^2.13.0",
     "express": "^4.13.4",
     "gulp": "^3.9.1",

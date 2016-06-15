@@ -1,6 +1,6 @@
 angular.module('beerApp')
-	.controller('addCtrl', ['$scope', '$rootScope', 'Beer', '$location',
-		function($scope, $rootScope, Beer, $location) {
+	.controller('addCtrl', ['$scope','$timeout', '$rootScope', 'Beer', '$location',
+		function($scope, $timeout, $rootScope, Beer, $location) {
 			$rootScope.PAGE = 'new';
 
 			$scope.formData = {};
@@ -18,7 +18,11 @@ angular.module('beerApp')
 					Beer.save($scope.beer, function() {
 						console.log('Beer saved!');
 					});
-					$location.url('/');
+					$timeout(function () {
+						$location.url('/');
+						console.log('Timeout occurred');
+					}, 1000);
+
 				}
 
 				// if ($scope.formData.name !== undefined && $scope.formData.location !== undefined && $scope.formData.abv !== undefined) {
