@@ -1,6 +1,7 @@
 angular.module('beerApp')
-	.controller('singleBeerCtrl', ['$scope','$rootScope', 'Beer', '$routeParams', '$location',
-		function($scope, $rootScope, Beer, $routeParams, $location) {
+	.controller('singleBeerCtrl', ['$scope','$http', '$rootScope', 'Beer', '$routeParams', '$location',
+		function($scope, $http, $rootScope, Beer, $routeParams, $location) {
+			// $scope.token = ff38a546dd3a7921822fcfeefa92fa37;
 			$rootScope.PAGE = "single";
 			$scope.formData = {};
 
@@ -34,5 +35,12 @@ angular.module('beerApp')
 					$scope.isEditable = 1;
 					$location.url('/');
 			};
+
+			// $scope.getBeerInfo = function() {
+			// 	$http.get('http://api.brewerydb.com/v2/beers?name=Negra%20Modelo&key=ff38a546dd3a7921822fcfeefa92fa37&format=json')
+			// 		.success(function(data) {
+			// 			console.log(data);
+			// 		});
+			// }();
 
 	}]);
