@@ -2,9 +2,10 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var csscomb = require('gulp-csscomb');
+var nodemon = require('gulp-nodemon');
 // var browserSync = require('browser-sync').create();
 
-var input = './client/styles/sass/main.scss';
+var input = './client/styles/sass/*.scss';
 var output = './client/styles/css/';
 
 
@@ -22,6 +23,18 @@ var output = './client/styles/css/';
 //     gulp.watch("portfolio/*.html").on('change', browserSync.reload);
 //     gulp.watch("scripts/*.js").on('change', browserSync.reload);
 // });
+
+gulp.task('node', function() {
+	nodemon({
+		script: 'server.js',
+		ext: 'js html scss',
+		tasks: ['watch'],
+		watch: [
+			'client/*',
+			'client/styles/sass/*/*'
+		]
+	});
+});
 
 gulp.task('sass', function() {
     return gulp
@@ -41,4 +54,4 @@ gulp.task('watch', function() {
 		});
 });
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'watch', 'node']);
