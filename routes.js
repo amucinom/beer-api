@@ -22,39 +22,36 @@ router
 	}))
 	.route('/beers')
 	// get all beers
-	.get(function(req, res) {
-		Beer.find(function(err, beers) {
-			if (err) {
-				res.send(err);
-			}
-			res.json(beers);
-		});
-	})
-	.post(function(req, res) {
-
-		brewdb.beer.find({
-			name: req.body.name
-		}, function(err, data) {
-			Beer.create({
-				name: req.body.name,
-				location: req.body.location,
-				abv: req.body.abv,
-				pic: data === null ? null : data[0].labels.medium
-			}, function(err, beer) {
+		.get(function(req, res) {
+			Beer.find(function(err, beers) {
 				if (err) {
 					res.send(err);
 				}
-				res.json({
-					message: 'Beer created!'
-				});
+				res.json(beers);
 			});
-			if (err) {
-				console.log(err);
-			}
+		})
+		.post(function(req, res) {
+			brewdb.beer.find({
+				name: req.body.name
+			}, function(err, data) {
+				Beer.create({
+					name: req.body.name,
+					location: req.body.location,
+					abv: req.body.abv,
+					pic: data === null ? null : data[0].labels.medium
+				}, function(err, beer) {
+					if (err) {
+						res.send(err);
+					}
+					res.json({
+						message: 'Beer created!'
+					});
+				});
+				if (err) {
+					console.log(err);
+				}
+			});
 		});
-
-
-	});
 
 router
 	.route('/beers/:beer_id')
