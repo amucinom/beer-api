@@ -1,7 +1,7 @@
-# Beer API
-This is a simple API I created about beer! Serves as a learning stop to get a hang of
-Node.js and Express and how to create RESTful API's with them. It will later be used
-to create an AngularJS app with it.
+# Beer Log App
+This is an MEAN stack application, with a RESTful API I created about beer!
+
+**See it live at** [amucinom-brewery.herokuapp.com](https://amucinom-brewery.herokuapp.com/)!
 
 ## Tools used
 - [Node.js](https://nodejs.org/en/)
